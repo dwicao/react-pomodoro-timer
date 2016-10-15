@@ -1,5 +1,6 @@
-# react-boilerplate
-# react-tomato-timer
-# react-tomato-timer
-# react-tomato-timer
-# react-pomodoro-timer
+# instalation
+$ git clone https://github.com/dwicao/react-pomodoro-timer
+$ npm install
+$ npm run start
+
+then go to http://localhost:8080/
