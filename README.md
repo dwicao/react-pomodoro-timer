@@ -1,4 +1,4 @@
-# instalation
+# installation
 
 $ git clone https://github.com/dwicao/react-pomodoro-timer
 
