@@ -10,11 +10,11 @@ var ButtonHandler = React.createClass({
 			minutes: 25,
 		};
 	},
-	componentDidMount: function() {
-		this.interval = setInterval(this.secondsHandler, 1000);
-	},
 	componentWillUnmount: function() {
 		clearInterval(this.interval);
+	},
+	setTimer: function() {
+		this.interval = setInterval(this.secondsHandler, 1000);
 	},
 	secondsHandler: function() {
 		if (this.state.running) {
@@ -27,12 +27,12 @@ var ButtonHandler = React.createClass({
 				seconds: 60,
 			});
 		}
-		if (this.state.running && this.state.seconds == 59) {
+		if (this.state.running && this.state.seconds === 59) {
 			this.setState({
 				minutes: this.state.minutes - 1,
 			});		
 		}
-		if (this.state.minutes == 0 && this.state.seconds == 60) {
+		if (this.state.minutes === 0 && this.state.seconds === 60) {
 			this.setState({
 				running: false,
 				seconds: 60,
@@ -42,9 +42,11 @@ var ButtonHandler = React.createClass({
 	},
 	onPlay: function() {
 		this.setState({ running: true });
+		this.setTimer();
 	},
 	onPause: function() {
 		this.setState({ running: false });
+		clearInterval(this.interval);
 	},
 	onReset: function() {
 		this.setState({
@@ -52,13 +54,16 @@ var ButtonHandler = React.createClass({
 			seconds: 60,
 			minutes: 25,
 		});
+		clearInterval(this.interval);
 	},
 	onBreakTime: function() {
+		clearInterval(this.interval);
 		this.setState({
 			running: true,
 			seconds: 60,
 			minutes: 5,
 		});
+		this.setTimer();
 	},
 	render: function() {
 		var seconds = this.state.seconds;
@@ -74,7 +79,7 @@ var ButtonHandler = React.createClass({
 					}
 					:
 					{
-						seconds == 60 ?
+						seconds === 60 ?
 						'00' :
 						seconds < 10 ?
 						'0' + seconds :
