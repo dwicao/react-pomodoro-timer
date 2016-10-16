@@ -27,9 +27,6 @@ var ButtonHandler = React.createClass({
 				seconds: 60,
 			});
 		}
-		this.minutesHandler();
-	},
-	minutesHandler: function() {
 		if (this.state.running && this.state.seconds == 59) {
 			this.setState({
 				minutes: this.state.minutes - 1,
