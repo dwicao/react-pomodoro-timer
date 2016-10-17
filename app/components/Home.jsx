@@ -1,22 +1,32 @@
-var React = require('react');
-var styles = require('../styles');
+import React from 'react';
+import styles from '../styles/index.jsx';
 
 
-var ButtonHandler = React.createClass({
-	getInitialState: function() {
-		return {
+class ButtonHandler extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
 			running: false,
 			seconds: 60,
 			minutes: 25,
 		};
-	},
-	componentWillUnmount: function() {
+		this.onPlay = this.onPlay.bind(this);
+		this.onPause = this.onPause.bind(this);
+		this.onReset = this.onReset.bind(this);
+		this.onBreakTime = this.onBreakTime.bind(this);
+		this.secondsHandler = this.secondsHandler.bind(this);
+		this.setTimer = this.setTimer.bind(this);
+	}
+
+	componentWillUnmount() {
 		clearInterval(this.interval);
-	},
-	setTimer: function() {
+	}
+
+	setTimer() {
 		this.interval = setInterval(this.secondsHandler, 1000);
-	},
-	secondsHandler: function() {
+	}
+
+	secondsHandler() {
 		if (this.state.running) {
 			this.setState({
 				seconds: (this.state.seconds - 1) % 60,
@@ -39,24 +49,28 @@ var ButtonHandler = React.createClass({
 				minutes: 25,
 			});
 		}
-	},
-	onPlay: function() {
+	}
+
+	onPlay() {
 		this.setState({ running: true });
 		this.setTimer();
-	},
-	onPause: function() {
+	}
+
+	onPause() {
 		this.setState({ running: false });
 		clearInterval(this.interval);
-	},
-	onReset: function() {
+	}
+
+	onReset() {
 		this.setState({
 			running: false,
 			seconds: 60,
 			minutes: 25,
 		});
 		clearInterval(this.interval);
-	},
-	onBreakTime: function() {
+	}
+
+	onBreakTime() {
 		clearInterval(this.interval);
 		this.setState({
 			running: true,
@@ -64,10 +78,11 @@ var ButtonHandler = React.createClass({
 			minutes: 5,
 		});
 		this.setTimer();
-	},
-	render: function() {
-		var seconds = this.state.seconds;
-		var minutes = this.state.minutes;
+	}
+
+	render() {
+		let seconds = this.state.seconds;
+		let minutes = this.state.minutes;
 
 		return (
 			<div>
@@ -96,7 +111,8 @@ var ButtonHandler = React.createClass({
 			</div>
 		);
 	}
-});
+
+}
 
 
 function Home (props) {
@@ -108,5 +124,4 @@ function Home (props) {
 	);
 }
 
-
-module.exports = Home;
+export default Home;

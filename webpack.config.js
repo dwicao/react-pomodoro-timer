@@ -7,15 +7,15 @@ var HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
 
 module.exports = {
 	entry: [
-		'./app/index.js'
+		'./app/index.jsx'
 	],
 	output: {
 		path: __dirname + '/dist',
-		filename: 'index_bundle.js'
+		filename: 'index_bundle.jsx'
 	},
 	module: {
 		loaders: [
-			{test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'}
+			{test: /\.jsx$/, exclude: /node_modules/, loader: 'babel-loader'}
 		]
 	},
 	plugins: [HtmlWebpackPluginConfig]

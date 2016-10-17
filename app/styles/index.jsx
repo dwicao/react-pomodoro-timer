@@ -1,4 +1,4 @@
-var styles = {
+let styles = {
 	body: {
 		backgroundColor: '#68a3a5'
 	},
@@ -22,4 +22,4 @@ var styles = {
 	}
 };
 
-module.exports = styles;
+export default styles;
