@@ -1,9 +1,10 @@
 import React from 'react';
-import '../styles/main.css';
+import HomeContainer from '../containers/HomeContainer.jsx';
 
-class ButtonHandler extends React.Component {
-	constructor(props) {
-		super(props);
+
+export default class Home extends React.Component {
+	constructor() {
+		super();
 		this.state = {
 			running: false,
 			seconds: 60,
@@ -15,6 +16,7 @@ class ButtonHandler extends React.Component {
 		this.onBreakTime = this.onBreakTime.bind(this);
 		this.secondsHandler = this.secondsHandler.bind(this);
 		this.setTimer = this.setTimer.bind(this);
+		this.componentWillUnmount = this.componentWillUnmount.bind(this);
 	}
 
 	componentWillUnmount() {
@@ -80,47 +82,19 @@ class ButtonHandler extends React.Component {
 	}
 
 	render() {
-		let seconds = this.state.seconds;
-		let minutes = this.state.minutes;
-
 		return (
 			<div>
-				<div className="pomodoro-timer">
-					{
-						minutes < 10 ?
-						'0' + minutes :
-						minutes
-					}
-					:
-					{
-						seconds === 60 ?
-						'00' :
-						seconds < 10 ?
-						'0' + seconds :
-						seconds
-					}
-				</div>
-				{ this.state.running ?
-					<button onClick={this.onPause}>Pause</button>
-					:
-					<button onClick={this.onPlay}>Play</button>
-				}
-				<button onClick={this.onReset}>Reset</button>
-				<button onClick={this.onBreakTime}>Break</button>
+				<HomeContainer
+					seconds={this.state.seconds}
+					minutes={this.state.minutes}
+					running={this.state.running}
+					onPlay={this.onPlay}
+					onReset={this.onReset}
+					onPause={this.onPause}
+					onBreakTime={this.onBreakTime}
+				/>
 			</div>
 		);
 	}
 
 }
-
-
-function Home (props) {
-	return (
-		<div className="pomodoro-wrapper">
-			<div className="pomodoro-title">Tomato Timer</div>
-			<ButtonHandler />
-		</div>
-	);
-}
-
-export default Home;

@@ -6,7 +6,7 @@ import NotFound from '../components/NotFound.jsx';
 
 
 
-let routes = (
+const routes = (
 	<Router history={browserHistory}>
 		<Route path='/' component={Main}>
 			<IndexRoute component={Home} />

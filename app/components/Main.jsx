@@ -1,11 +1,13 @@
 import React from 'react';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
 
 export default class Main extends React.Component {
 	render() {
 		return (
-			<div className='main-container'>
+			<MuiThemeProvider>
 				{this.props.children}
-			</div>
+			</MuiThemeProvider>
 		);
 	}
 }
