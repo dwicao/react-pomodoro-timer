@@ -53,6 +53,7 @@ export default class Home extends React.Component {
 	}
 
 	onPlay() {
+		clearInterval(this.interval);
 		this.setState({ running: true });
 		this.setTimer();
 	}
