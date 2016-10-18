@@ -1,6 +1,5 @@
 import React from 'react';
-import styles from '../styles/index.jsx';
-
+import '../styles/main.css';
 
 class ButtonHandler extends React.Component {
 	constructor(props) {
@@ -86,7 +85,7 @@ class ButtonHandler extends React.Component {
 
 		return (
 			<div>
-				<div style={styles.timer}>
+				<div className="pomodoro-timer">
 					{
 						minutes < 10 ?
 						'0' + minutes :
@@ -117,8 +116,8 @@ class ButtonHandler extends React.Component {
 
 function Home (props) {
 	return (
-		<div style={styles.wrapper}>
-			<div style={styles.title}>Tomato Timer</div>
+		<div className="pomodoro-wrapper">
+			<div className="pomodoro-title">Tomato Timer</div>
 			<ButtonHandler />
 		</div>
 	);
