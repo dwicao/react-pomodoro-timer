@@ -16360,6 +16360,11 @@
 					{ style: style, onTouchTap: props.onBreakTime },
 					_react2.default.createElement(_freeBreakfast2.default, null)
 				)
+			),
+			_react2.default.createElement(
+				'div',
+				{ className: 'footer' },
+				'Lutfian Dwi Cahyono'
 			)
 		);
 	}
@@ -17969,7 +17974,7 @@
 
 
 	// module
-	exports.push([module.id, "body{background-color:#607d8b;font-family:Roboto,sans-serif}.pomodoro-wrapper{color:#fff;width:100%;height:100%;text-align:center}.pomodoro-title{font-size:28pt;position:fixed;top:30%;left:0;right:0}.pomodoro-timer{font-size:56pt;position:fixed;top:45%;bottom:40%;left:0;right:0}.pomodoro-button{position:fixed;bottom:30%;left:0;right:0}", ""]);
+	exports.push([module.id, "body{background-color:#607d8b;font-family:Roboto,sans-serif}.pomodoro-wrapper{color:#fff;width:100%;height:100%;text-align:center}.pomodoro-title{font-size:28pt;position:fixed;top:30%;left:0;right:0}.pomodoro-timer{font-size:56pt;position:fixed;top:45%;bottom:40%;left:0;right:0}.pomodoro-button{bottom:30%}.footer,.pomodoro-button{position:fixed;left:0;right:0}.footer{color:#fff;bottom:5px}", ""]);
 
 	// exports
 

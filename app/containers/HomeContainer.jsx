@@ -58,6 +58,9 @@ function HomeContainer (props)  {
       				<IconBreak />
     			</FloatingActionButton>
     			</div>
+    			<div className="footer">
+					Lutfian Dwi Cahyono
+				</div>
 			</div>
 		);
 }

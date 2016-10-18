@@ -33,3 +33,11 @@ body {
 	left: 0%;
 	right: 0%;
 }
+
+.footer {
+	color: white;
+	position: fixed; 
+	bottom: 5px;
+	left: 0%;
+	right: 0%;
+}
