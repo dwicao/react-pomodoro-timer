@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom';
-import routes from './config/routes.jsx';
+import routes from './config/routes';
 
 ReactDOM.render(
 	routes, 

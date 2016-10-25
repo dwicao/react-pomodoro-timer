@@ -1,8 +1,8 @@
 import React from 'react';
 import { Router, Route, browserHistory, IndexRoute } from 'react-router';
-import Main from '../components/Main.jsx';
-import Home from '../components/Home.jsx';
-import NotFound from '../components/NotFound.jsx';
+import Main from '../components/Main';
+import Home from '../components/Home';
+import NotFound from '../components/NotFound';
 
 
 
