@@ -1,3 +1,4 @@
+var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
 	template: __dirname + '/app/index.html',
@@ -26,5 +27,12 @@ module.exports = {
 		    }
 		]
 	},
-	plugins: [HtmlWebpackPluginConfig]
+	plugins: [
+		new webpack.DefinePlugin({
+	   		'process.env': {
+	     		 NODE_ENV: JSON.stringify('production')
+	    	}
+	  	}),
+		HtmlWebpackPluginConfig,
+	]
 };
