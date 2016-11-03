@@ -17,7 +17,6 @@ export default class Home extends React.Component {
 		this.onBreakTime = this.onBreakTime.bind(this);
 		this.secondsHandler = this.secondsHandler.bind(this);
 		this.setTimer = this.setTimer.bind(this);
-		this.componentWillUnmount = this.componentWillUnmount.bind(this);
 	}
 
 	componentWillUnmount() {
