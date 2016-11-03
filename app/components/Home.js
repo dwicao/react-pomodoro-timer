@@ -1,4 +1,5 @@
 import React from 'react';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import HomeContainer from '../containers/HomeContainer';
 
 
@@ -84,7 +85,7 @@ export default class Home extends React.Component {
 
 	render() {
 		return (
-			<div>
+			<MuiThemeProvider>
 				<HomeContainer
 					seconds={this.state.seconds}
 					minutes={this.state.minutes}
@@ -94,7 +95,7 @@ export default class Home extends React.Component {
 					onPause={this.onPause}
 					onBreakTime={this.onBreakTime}
 				/>
-			</div>
+			</MuiThemeProvider>
 		);
 	}
 
