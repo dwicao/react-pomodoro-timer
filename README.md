@@ -1,9 +1,29 @@
-# installation
+# React Pomodoro Timer
+### Install at local:
+Open Terminal, then type command:  
+> git clone https://github.com/dwicao/react-pomodoro-timer.git  
 
-$ git clone https://github.com/dwicao/react-pomodoro-timer
+Go to project folder:
+> cd react-pomodoro-timer
 
-$ npm install
+Type following command :  
+> npm install  
 
-$ npm start
+Wait until installation process finished and then type :
+> npm start  
 
-then go to http://localhost:8080/
+In your browser go to:  
+> http://localhost:8080/  
+
+### Demo  
+[Click Here!](https://dwicao.github.io/react-pomodoro-timer/)  
+
+###  Available Command  
+
+| npm run production | To bundle the entire app to folder /dist |
+| --- | --- |  
+ 
+### License
+**MIT**  
+
+
